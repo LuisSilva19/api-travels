@@ -1,0 +1,27 @@
+# version: "3"
+
+# services:
+#   api-service:
+#     env_file:
+#       - ./.env
+#     container_name: api-service
+#     build:
+#       context: ./
+#     restart: always
+#     ports:
+#       - 3001:3000
+
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - '6500:5432'
+    volumes:
+      - progresDB:/data/postgres
+    env_file:
+      - ./.env
+volumes:
+  progresDB:
