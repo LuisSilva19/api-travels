@@ -19,11 +19,11 @@ export class TourModel extends Model {
         type: DataType.BIGINT,
         autoIncrement: true,
     })
-    declare id: string;
+    declare id: BigInt;
 
     @ForeignKey(() => TravelModel)
-    @Column({type: DataType.UUID})
-    declare travel_id: string;
+    @Column({type: DataType.BIGINT})
+    declare travel_id: BigInt;
 
     @Column({ type: DataType.STRING })
     declare name: string;

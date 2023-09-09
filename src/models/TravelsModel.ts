@@ -22,7 +22,7 @@ export default class TravelModel extends Model {
         primaryKey: true,
         type: DataType.BIGINT
     })
-    declare id: string;
+    declare id: BigInt;
 
     @Column({ type: DataType.STRING })
     declare name: string;

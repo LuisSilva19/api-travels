@@ -3,6 +3,7 @@ import noteRoutes from "./noteRoutes";
 import tourRoutes from "./tourRoutes";
 import travelsRoutes from "./travelRoutes";
 import hotelRoutes from "./hotelRoutes";
+import { keycloak } from "../configs/keycloakService";
 
 const routes = (app: Application): void => {
     app.route('/').get((req: Request, res: Response) => {

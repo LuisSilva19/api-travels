@@ -5,9 +5,8 @@ import { TourModel } from "../models/TourModel";
 import { TravelDTO } from "../dto/TravelDTO";
 import validationBody from "../middleware/validaConstraint";
 
-
 class TravelController {
-    static createTravel = async (req: Request, res: Response) => {    
+    static createTravel = async (req: Request, res: Response) => { 
         const errors = await validationBody(TravelDTO, req);
 
         if(errors!== null) {
@@ -15,8 +14,8 @@ class TravelController {
             return res.status(400).json(errors);
         }
 
-        const travel = Travel.create(req.body);
-        logger.info(travel);
+        const travel = await Travel.create(req.body);
+        logger.info(JSON.stringify(travel));
         return res.status(201).json(travel);
         
     };
